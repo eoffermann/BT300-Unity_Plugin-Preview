@@ -138,7 +138,7 @@ public class MoverioController : MonoBehaviour {
 
 	//function that enables developers to recieve sensor data from the Moverio. 
 
-	public float[] GetSensorData(int sensorType)
+	public float[] GetSensorData(Moverio.Sensor sensorType)
 	{
 		float[] value = null;
 		
@@ -146,7 +146,7 @@ public class MoverioController : MonoBehaviour {
 		
 		if(MoverioDevice)
 		{
-			value = _currentActivity.Call<float[]> ("GetSensorData", sensorType);
+			value = _currentActivity.Call<float[]> ("GetSensorData", (int)sensorType);
 		}
 		
 		#endif

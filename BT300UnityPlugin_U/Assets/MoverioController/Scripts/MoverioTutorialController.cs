@@ -4,20 +4,12 @@
 using UnityEngine;
 using System;
 using System.Collections;
-
+using Moverio;
 
 public class MoverioTutorialController : MonoBehaviour {
 
 	//sets various ints to handle the sensor values. 
 	public  int CUSTOM_SENSOR_COUNT = 6;
-
-	public  int TYPE_HEADSET_ACCELEROMETER = 0;
-	public  int TYPE_CONTROLLER_ACCELEROMETER = 1;
-	public  int TYPE_CONTROLLER_MAGNETIC_FIELD = 2;
-	public  int TYPE_CONTROLLER_GYROSCOPE = 3;
-	public  int TYPE_CONTROLLER_ROTATION_VECTOR = 4;
-	public  int TYPE_HEADSET_TAP = 5;
-
 
 	//text views to display the sensor data. 
 
@@ -49,25 +41,25 @@ public class MoverioTutorialController : MonoBehaviour {
 	void DisplaySensorData() 
 	{
 
-		TextView.text =  "HEADSET ACCEL x: " + MoverioController.Instance.GetSensorData (TYPE_HEADSET_ACCELEROMETER)[0].ToString () + ", " + 
-			"y: " + MoverioController.Instance.GetSensorData (TYPE_HEADSET_ACCELEROMETER)[1].ToString () + ", " + 
-				"z: " + MoverioController.Instance.GetSensorData (TYPE_HEADSET_ACCELEROMETER)[2].ToString ();
+		TextView.text =  "HEADSET ACCEL x: " + MoverioController.Instance.GetSensorData (Sensor.TYPE_HEADSET_ACCELEROMETER)[0].ToString () + ", " + 
+			"y: " + MoverioController.Instance.GetSensorData (Sensor.TYPE_HEADSET_ACCELEROMETER)[1].ToString () + ", " + 
+				"z: " + MoverioController.Instance.GetSensorData (Sensor.TYPE_HEADSET_ACCELEROMETER)[2].ToString ();
 
-		TextView2.text = "CONTROLLER ACCEL x: " + MoverioController.Instance.GetSensorData (TYPE_CONTROLLER_ACCELEROMETER)[0].ToString () + ", "+ 
-			"y: " + MoverioController.Instance.GetSensorData (TYPE_CONTROLLER_ACCELEROMETER)[1].ToString () + ", " + 
-				"z: " + MoverioController.Instance.GetSensorData (TYPE_CONTROLLER_ACCELEROMETER)[2].ToString ();
+		TextView2.text = "CONTROLLER ACCEL x: " + MoverioController.Instance.GetSensorData (Sensor.TYPE_CONTROLLER_ACCELEROMETER)[0].ToString () + ", "+ 
+			"y: " + MoverioController.Instance.GetSensorData (Sensor.TYPE_CONTROLLER_ACCELEROMETER)[1].ToString () + ", " + 
+				"z: " + MoverioController.Instance.GetSensorData (Sensor.TYPE_CONTROLLER_ACCELEROMETER)[2].ToString ();
 
-		TextView3.text = "CONTROLLER MAG x: " + MoverioController.Instance.GetSensorData (TYPE_CONTROLLER_MAGNETIC_FIELD)[0].ToString () + ", "+ 
-			"y: " + MoverioController.Instance.GetSensorData (TYPE_CONTROLLER_MAGNETIC_FIELD)[1].ToString () + ", " + 
-				"z: " + MoverioController.Instance.GetSensorData (TYPE_CONTROLLER_MAGNETIC_FIELD)[2].ToString ();
+		TextView3.text = "CONTROLLER MAG x: " + MoverioController.Instance.GetSensorData (Sensor.TYPE_CONTROLLER_MAGNETIC_FIELD)[0].ToString () + ", "+ 
+			"y: " + MoverioController.Instance.GetSensorData (Sensor.TYPE_CONTROLLER_MAGNETIC_FIELD)[1].ToString () + ", " + 
+				"z: " + MoverioController.Instance.GetSensorData (Sensor.TYPE_CONTROLLER_MAGNETIC_FIELD)[2].ToString ();
 
-		TextView4.text = 	"CONTROLLER GYRO x: " + MoverioController.Instance.GetSensorData (TYPE_CONTROLLER_GYROSCOPE)[0].ToString () + ", "+ 
-			"y: " + MoverioController.Instance.GetSensorData (TYPE_CONTROLLER_GYROSCOPE)[1].ToString () + ", " + 
-				"z: " + MoverioController.Instance.GetSensorData (TYPE_CONTROLLER_GYROSCOPE)[2].ToString ();
+		TextView4.text = 	"CONTROLLER GYRO x: " + MoverioController.Instance.GetSensorData (Sensor.TYPE_CONTROLLER_GYROSCOPE)[0].ToString () + ", "+ 
+			"y: " + MoverioController.Instance.GetSensorData (Sensor.TYPE_CONTROLLER_GYROSCOPE)[1].ToString () + ", " + 
+				"z: " + MoverioController.Instance.GetSensorData (Sensor.TYPE_CONTROLLER_GYROSCOPE)[2].ToString ();
 
-		TextView5.text = 	"CONTROLLER ROTAT x: " + MoverioController.Instance.GetSensorData (TYPE_CONTROLLER_ROTATION_VECTOR)[0].ToString () + ", "+ 
-			"y: " + MoverioController.Instance.GetSensorData (TYPE_CONTROLLER_ROTATION_VECTOR)[1].ToString () + ", " + 
-				"z: " + MoverioController.Instance.GetSensorData (TYPE_CONTROLLER_ROTATION_VECTOR)[2].ToString ();
+		TextView5.text = 	"CONTROLLER ROTAT x: " + MoverioController.Instance.GetSensorData (Sensor.TYPE_CONTROLLER_ROTATION_VECTOR)[0].ToString () + ", "+ 
+			"y: " + MoverioController.Instance.GetSensorData (Sensor.TYPE_CONTROLLER_ROTATION_VECTOR)[1].ToString () + ", " + 
+				"z: " + MoverioController.Instance.GetSensorData (Sensor.TYPE_CONTROLLER_ROTATION_VECTOR)[2].ToString ();
 
 		TextView6.text = "Tap: " + MoverioController.Instance.GetHeadsetTap ().ToString () + 
 			", Tap Count: " + MoverioController.Instance.GetHeadsetTapCount ().ToString ();
