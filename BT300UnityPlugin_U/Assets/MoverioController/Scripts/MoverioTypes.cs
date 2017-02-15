@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Moverio
     {
+    /// <summary>
+    /// Sensor types for GetSensorData
+    /// </summary>
     public enum Sensor
         {
         TYPE_HEADSET_ACCELEROMETER = 0,
